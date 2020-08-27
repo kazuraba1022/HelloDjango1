@@ -3,7 +3,8 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>HelloDjango1</Name>
     <RootNamespace>HelloDjango1</RootNamespace>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -30,6 +31,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="helloDjango\admin.py" />
+    <Compile Include="helloDjango\apps.py" />
+    <Compile Include="helloDjango\migrations\__init__.py" />
+    <Compile Include="helloDjango\models.py" />
+    <Compile Include="helloDjango\tests.py" />
+    <Compile Include="helloDjango\views.py" />
+    <Compile Include="helloDjango\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="HelloDjango1\__init__.py" />
     <Compile Include="HelloDjango1\settings.py" />
@@ -37,16 +45,21 @@
     <Compile Include="HelloDjango1\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="helloDjango\templates\helloDjango\index.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HelloDjango1\" />
+    <Folder Include="helloDjango\" />
+    <Folder Include="helloDjango\migrations\" />
+    <Folder Include="helloDjango\templates\" />
+    <Folder Include="helloDjango\templates\helloDjango\" />
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="env\">
-      <Id>env</Id>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
       <Version>3.7</Version>
-      <Description>env (Python 3.7 (64-bit))</Description>
+      <Description>env1 (Python 3.7 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
